@@ -28,25 +28,21 @@ def memoized_fib(n):
         return retrieve_fib(n-1) + retrieve_fib(n-2)
 
 
-
+inp = int(input())
 
 startTime = int(time.time()*1000.0)
-memoized_fib(101)
+memoized_fib(inp + 1)
 for i in calculated.items():
     print(str(i[0]) + ": " + str(i[1]))
 endTime = int(time.time()*1000.0)
 print("Memoized recursive time: " + str(endTime - startTime))
 
 startTime = int(time.time()*1000.0)
-iterative_fib(100)
+iterative_fib(inp)
 endTime = int(time.time()*1000.0)
-iterative_time = endTime - startTime
-
-print("Iterative time: " + str(iterative_time))
+print("Iterative time: " + str(endTime - startTime))
 
 startTime = int(time.time()*1000.0)
-recursive_fibonacci(100)
+recursive_fibonacci(inp)
 endTime = int(time.time()*1000.0)
-recursive_time = endTime - startTime
-
-print("Recursive time: " + str(recursive_time))
+print("Recursive time: " + str(endTime - startTime))
